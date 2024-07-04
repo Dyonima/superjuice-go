@@ -1,0 +1,50 @@
+name: Build and Deploy to Self-Hosted Server
+
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  PROJECT_ID: superjuice-go
+  IMAGE: superjuice-go
+  DEPLOYMENT_NAME: superjuice
+
+jobs:
+  setup-build-publish-deploy:
+    name: Setup, Build, Publish, and Deploy
+    runs-on: self-hosted
+    environment: production
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup SSH
+      uses: webfactory/ssh-agent@v0.7.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    # Build the image
+    - name: Build
+      run: |-
+        docker build \
+          --tag "localhost:5000/${PROJECT_ID}/${API_IMAGE}:${GITHUB_SHA}" \
+          --build-arg GITHUB_SHA="${GITHUB_SHA}" \
+          --build-arg GITHUB_REF="${GITHUB_REF}" \
+          superjuice-go/
+
+    # Push the API image to registry
+    - name: Publish
+      run: |-
+        docker push "localhost:5000/${PROJECT_ID}/${API_IMAGE}:${GITHUB_SHA}"
+
+    # Deploy the image to server
+    - name: Deploy
+      run: |-
+        ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+        "docker pull localhost:5000/${PROJECT_ID}/${API_IMAGE}:${GITHUB_SHA} && \
+        docker stop ${DEPLOYMENT_NAME} || true && \
+        docker rm ${DEPLOYMENT_NAME} || true && \
+        docker run -d --name ${DEPLOYMENT_NAME} \
+          -p 8080:3002 \
+          localhost:5000/${PROJECT_ID}/${API_IMAGE}:${GITHUB_SHA}"
