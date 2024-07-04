@@ -6,10 +6,22 @@ templ Home() {
 		<title>super juice calculator</title>
 		<script src="https://unpkg.com/htmx.org@2.0.0" integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw" crossorigin="anonymous"></script>
 		<script src="https://cdn.tailwindcss.com"></script>
+		<style>
+            .htmx-indicator{
+                display:none;
+            }
+            .htmx-request .htmx-indicator{
+                display:inline;
+            }
+            .htmx-request.htmx-indicator{
+                display:inline;
+            }
+        </style>
 	</head>
 	<body class="bg-gray-100">
 		<div class="flex flex-col items-center p-8 min-h-screen">
-			<h1 class="text-3xl font-bold mb-4">super juice calculator</h1>
+			<h1 class="text-3xl font-bold">super juice calculator</h1>
+			<img src="/assets/lemon.png" alt="lemon" class="w-16 h-16 my-4"/>
 			<form hx-post="/api/calculate" hx-target="#recipe" class="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
 				<div class="flex flex-col mb-4">
 					<label class="font-bold mb-2 text-gray-700" for="citrus">type of citrus</label>
@@ -29,6 +41,7 @@ templ Home() {
 				</div>
 				<button class="bg-sky-400 hover:bg-sky-600 transition-all text-white font-bold py-2 px-4 rounded w-full" type="submit">
 					calculate
+					<img class="htmx-indicator w-4 h-4 ml-4" src="/assets/tail-spin.svg" alt="loading..."/>
 				</button>
 			</form>
 			<div id="recipe" class="mt-6"></div>
