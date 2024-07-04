@@ -1,72 +1,66 @@
 package views
 
 import (
-    "strconv"
-    "strings"
+	"strconv"
+	"strings"
 )
 
 func formatFloat(f float64) string {
-    // First, format the number with 2 digits of precision
-    str := strconv.FormatFloat(f, 'f', 2, 64)
-    // Trim unnecessary trailing zeros and the decimal point if it becomes unnecessary
-    str = strings.TrimRight(strings.TrimRight(str, "0"), ".")
-    return str
+	str := strconv.FormatFloat(f, 'f', 2, 64)
+	str = strings.TrimRight(strings.TrimRight(str, "0"), ".")
+	return str
 }
 
-templ Recipe (citricAcid float64, malicAcid float64, sugar float64, salt float64, msg float64, ascorbicAcid float64, water float64) {
-    <div class="bg-white shadow-md rounded-lg p-6 w-full max-w-md mx-auto">
-        if citricAcid > 0 {
-            <div class="flex items-center mb-4">
-                <p class="font-bold mr-4 text-gray-700">citric acid</p>
-                <p class="text-gray-900">{formatFloat(citricAcid)}</p>
-                <p class="ml-1 text-gray-700">g</p>
-            </div>
-        }
-        
-        if malicAcid > 0 {
-            <div class="flex items-center mb-4">
-                <p class="font-bold mr-4 text-gray-700">malic acid</p>
-                <p class="text-gray-900">{formatFloat(malicAcid)}</p>
-                <p class="ml-1 text-gray-700">g</p>
-            </div>
-        }
-
-        if sugar > 0 {
-            <div class="flex items-center mb-4">
-                <p class="font-bold mr-4 text-gray-700">sugar</p>
-                <p class="text-gray-900">{formatFloat(sugar)}</p>
-                <p class="ml-1 text-gray-700">g</p>
-            </div>
-        }
-
-        if salt > 0 {
-            <div class="flex items-center mb-4">
-                <p class="font-bold mr-4 text-gray-700">salt</p>
-                <p class="text-gray-900">{formatFloat(salt)}</p>
-                <p class="ml-1 text-gray-700">g</p>
-            </div>
-        }
-        if msg > 0 {
-            <div class="flex items-center mb-4">
-                <p class="font-bold mr-4 text-gray-700">msg</p>
-                <p class="text-gray-900">{formatFloat(msg)}</p>
-                <p class="ml-1 text-gray-700">g</p>
-            </div>
-        }
-
-        if ascorbicAcid > 0 {
-            <div class="flex items-center mb-4">
-                <p class="font-bold mr-4 text-gray-700">ascorbic acid</p>
-                <p class="text-gray-900">{formatFloat(ascorbicAcid)}</p>
-                <p class="ml-1 text-gray-700">g</p>
-            </div>
-        }
-        if water > 0 {
-            <div class="flex items-center mb-4">
-                <p class="font-bold mr-4 text-gray-700">water</p>
-                <p class="text-gray-900">{formatFloat(water)}</p>
-                <p class="ml-1 text-gray-700">g</p>
-            </div>
-        }
-    </div>
+templ Recipe(citricAcid float64, malicAcid float64, sugar float64, salt float64, msg float64, ascorbicAcid float64, water float64) {
+	<div class="bg-white shadow-md rounded-lg p-6 w-full max-w-md mx-auto">
+		if citricAcid > 0 {
+			<div class="flex items-center mb-4">
+				<p class="font-bold mr-4 text-gray-700">citric acid</p>
+				<p class="text-gray-900">{ formatFloat(citricAcid) }</p>
+				<p class="ml-1 text-gray-700">g</p>
+			</div>
+		}
+		if malicAcid > 0 {
+			<div class="flex items-center mb-4">
+				<p class="font-bold mr-4 text-gray-700">malic acid</p>
+				<p class="text-gray-900">{ formatFloat(malicAcid) }</p>
+				<p class="ml-1 text-gray-700">g</p>
+			</div>
+		}
+		if sugar > 0 {
+			<div class="flex items-center mb-4">
+				<p class="font-bold mr-4 text-gray-700">sugar</p>
+				<p class="text-gray-900">{ formatFloat(sugar) }</p>
+				<p class="ml-1 text-gray-700">g</p>
+			</div>
+		}
+		if salt > 0 {
+			<div class="flex items-center mb-4">
+				<p class="font-bold mr-4 text-gray-700">salt</p>
+				<p class="text-gray-900">{ formatFloat(salt) }</p>
+				<p class="ml-1 text-gray-700">g</p>
+			</div>
+		}
+		if msg > 0 {
+			<div class="flex items-center mb-4">
+				<p class="font-bold mr-4 text-gray-700">msg</p>
+				<p class="text-gray-900">{ formatFloat(msg) }</p>
+				<p class="ml-1 text-gray-700">g</p>
+			</div>
+		}
+		if ascorbicAcid > 0 {
+			<div class="flex items-center mb-4">
+				<p class="font-bold mr-4 text-gray-700">ascorbic acid</p>
+				<p class="text-gray-900">{ formatFloat(ascorbicAcid) }</p>
+				<p class="ml-1 text-gray-700">g</p>
+			</div>
+		}
+		if water > 0 {
+			<div class="flex items-center mb-4">
+				<p class="font-bold mr-4 text-gray-700">water</p>
+				<p class="text-gray-900">{ formatFloat(water) }</p>
+				<p class="ml-1 text-gray-700">g</p>
+			</div>
+		}
+	</div>
 }
