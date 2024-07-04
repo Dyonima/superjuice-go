@@ -1,15 +1,18 @@
 package views
 
 templ Home () {
-    <script src="https://unpkg.com/htmx.org@2.0.0" integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw" crossorigin="anonymous"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/htmx.org@2.0.0" integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw" crossorigin="anonymous"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
     <body class="bg-gray-100">
         <div class="flex flex-col items-center p-8 min-h-screen">
             <h1 class="text-3xl font-bold mb-4">super juice calculator</h1>
             <form hx-post="/api/calculate" hx-target="#recipe" class="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
                 <div class="flex flex-col mb-4">
                     <label class="font-bold mb-2 text-gray-700" for="citrus">type of citrus</label>
-                    <select name="citrus" id="citrus" class="p-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500">
+                    <select name="citrus" id="citrus" class="p-2 border border-gray-300 rounded focus:outline-none focus:border-sky-500">
                         <option value="lime">lime</option>
                         <option value="lemon">lemon</option>
                         <option value="grapefruit">grapefruit</option>
@@ -19,14 +22,15 @@ templ Home () {
                 <div class="flex flex-col mb-4">
                     <label class="font-bold mb-2 text-gray-700" for="a">weight of peels</label>
                     <div class="flex items-center">
-                        <input name="weight" id="a" value="" class="p-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500 flex-grow"></input>
+                        <input name="weight" id="a" value="" class="p-2 border border-gray-300 rounded focus:outline-none focus:border-sky-500 flex-grow"></input>
                         <p class="ml-2 text-gray-700">g</p>
                     </div>
                 </div>
-                <button class="bg-sky-400 hover:bg-sky-600 transition-all text-white font-bold py-2 px-4 rounded w-full" type="submit">calculate</button>
+                <button class="bg-sky-400 hover:bg-sky-600 transition-all text-white font-bold py-2 px-4 rounded w-full" type="submit">
+                    calculate
+                </button>
             </form>
             <div id="recipe" class="mt-6"></div>
         </div>
-        <img class="htmx-indicator hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" src="./assets/tail-spin.svg" alt="loading..."> 
     </body>
 }

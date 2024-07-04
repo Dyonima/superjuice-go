@@ -20,6 +20,7 @@ func faviconHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.Handle("/", templ.Handler(views.Home()))
 	http.HandleFunc("/favicon.ico", faviconHandler)
+	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
 	http.HandleFunc("/api/calculate", api.CalculateHandler)
 
 	log.Println("Server started on port " + strconv.Itoa(port) + "...")
