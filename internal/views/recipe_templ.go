@@ -42,7 +42,7 @@ func Recipe(citricAcid float64, malicAcid float64, sugar float64, salt float64, 
 			return templ_7745c5c3_Err
 		}
 		if citricAcid > 0 {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<tr class=\"border-b\"><td class=\"font-bold text-gray-700 py-2\">Citric Acid</td><td class=\"text-gray-900 py-2 pl-6\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<tr class=\"border-b\"><td class=\"font-bold text-gray-700 py-2\">citric acid</td><td class=\"text-gray-900 py-2 pl-6\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -61,7 +61,7 @@ func Recipe(citricAcid float64, malicAcid float64, sugar float64, salt float64, 
 			}
 		}
 		if malicAcid > 0 {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<tr class=\"border-b\"><td class=\"font-bold text-gray-700 py-2\">Malic Acid</td><td class=\"text-gray-900 py-2 pl-6\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<tr class=\"border-b\"><td class=\"font-bold text-gray-700 py-2\">malic acid</td><td class=\"text-gray-900 py-2 pl-6\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -80,7 +80,7 @@ func Recipe(citricAcid float64, malicAcid float64, sugar float64, salt float64, 
 			}
 		}
 		if sugar > 0 {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<tr class=\"border-b\"><td class=\"font-bold text-gray-700 py-2\">Sugar</td><td class=\"text-gray-900 py-2 pl-6\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<tr class=\"border-b\"><td class=\"font-bold text-gray-700 py-2\">sugar</td><td class=\"text-gray-900 py-2 pl-6\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -99,7 +99,7 @@ func Recipe(citricAcid float64, malicAcid float64, sugar float64, salt float64, 
 			}
 		}
 		if salt > 0 {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<tr class=\"border-b\"><td class=\"font-bold text-gray-700 py-2\">Salt</td><td class=\"text-gray-900 py-2 pl-6\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<tr class=\"border-b\"><td class=\"font-bold text-gray-700 py-2\">salt</td><td class=\"text-gray-900 py-2 pl-6\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -118,7 +118,7 @@ func Recipe(citricAcid float64, malicAcid float64, sugar float64, salt float64, 
 			}
 		}
 		if msg > 0 {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<tr class=\"border-b\"><td class=\"font-bold text-gray-700 py-2\">MSG</td><td class=\"text-gray-900 py-2 pl-6\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<tr class=\"border-b\"><td class=\"font-bold text-gray-700 py-2\">msg</td><td class=\"text-gray-900 py-2 pl-6\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -137,7 +137,7 @@ func Recipe(citricAcid float64, malicAcid float64, sugar float64, salt float64, 
 			}
 		}
 		if ascorbicAcid > 0 {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<tr class=\"border-b\"><td class=\"font-bold text-gray-700 py-2\">Ascorbic Acid</td><td class=\"text-gray-900 py-2 pl-6\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<tr class=\"border-b\"><td class=\"font-bold text-gray-700 py-2\">ascorbic acid</td><td class=\"text-gray-900 py-2 pl-6\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -156,7 +156,7 @@ func Recipe(citricAcid float64, malicAcid float64, sugar float64, salt float64, 
 			}
 		}
 		if water > 0 {
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<tr><td class=\"font-bold text-gray-700 py-2\">Water</td><td class=\"text-gray-900 py-2 pl-6\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<tr><td class=\"font-bold text-gray-700 py-2\">water</td><td class=\"text-gray-900 py-2 pl-6\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
