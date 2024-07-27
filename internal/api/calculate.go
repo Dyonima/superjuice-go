@@ -26,7 +26,7 @@ func CalculateHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Calculate the recipe.
-	water := weight * 10.
+	water := weight * 16.6.
 
 	// citric acid
 	var citricAcid float64
@@ -34,7 +34,7 @@ func CalculateHandler(w http.ResponseWriter, r *http.Request) {
 	case "lime":
 		citricAcid = weight * .4
 	case "lemon":
-		citricAcid = weight * .5
+		citricAcid = weight * 1
 	case "orange":
 		citricAcid = weight * .54
 	case "grapefruit":
@@ -50,7 +50,7 @@ func CalculateHandler(w http.ResponseWriter, r *http.Request) {
 	case "lime":
 		malicAcid = weight * .2
 	case "lemon":
-		malicAcid = weight * .1
+		malicAcid = weight * 0
 	case "orange":
 		malicAcid = weight * .06
 	case "grapefruit":
